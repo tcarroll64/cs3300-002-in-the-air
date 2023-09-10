@@ -4,7 +4,7 @@
 
 [Introduction](#introduction)
 
-&nbsp[Interacting with the Repository](#interacting-with-the-repository)
+&nbsp [Interacting with the Repository](#interacting-with-the-repository)
 
 [Getting the Repository onto Your Local Machine](#getting-the-repository-onto-your-local-machine)
 
