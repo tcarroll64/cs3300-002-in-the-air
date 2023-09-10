@@ -6,21 +6,21 @@
 
 [Interacting with the Repository](#interacting-with-the-repository)
 
-&nbsp;[Getting the Repository onto Your Local Machine](#getting-the-repository-onto-your-local-machine)
+&nbsp;&nbsp;[Getting the Repository onto Your Local Machine](#getting-the-repository-onto-your-local-machine)
 
-&nbsp;[Updating the Repository](#updating-the-repository)
+&nbsp;&nbsp;[Updating the Repository](#updating-the-repository)
 
-&nbsp;[Branches](#branches)
+&nbsp;&nbsp;[Branches](#branches)
 
 [Commits](#commits)
 
-&nbsp;[Commit Messages](#commit-messages)
+&nbsp;&nbsp;[Commit Messages](#commit-messages)
 
-&nbsp;[Viewing Previous Commits](#viewing-previous-commits)
+&nbsp;&nbsp;[Viewing Previous Commits](#viewing-previous-commits)
 
 [Tags](#tags)
 
-&nbsp;[Viewing Previous Tags](#viewing-previous-tags)
+&nbsp;&nbsp;[Viewing Previous Tags](#viewing-previous-tags)
 
 [Merging](#merging)
 
