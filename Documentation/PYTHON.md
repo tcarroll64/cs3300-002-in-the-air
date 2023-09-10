@@ -1,5 +1,21 @@
 # Python Technical Documentation
 
+### Table of Contents
+
+[Introduction](#Introduction)
+
+[Virtual Environment](#Virtual Environment)
+
+[Classes and Objects](#Classes and Objects)
+
+[Dictionaries](#Dictionaries)
+
+[Regular Expressions](#Regular Expressions)
+
+### Introduction
+
+This document serves the purpose of being a resource to keep all of the important Python information we will be needing for this semester. Use the table of contents to navigate to a particular section you would like to know more about. Anyone on the team is welcome to edit this document, if they spot errors or would like to add new information.
+
 ### Virtual Environment
 
 In Python, a virtual environment is a **dependency management** tool that isolates dependencies that are required by different projects. Two different projects might use two different versions of the same dependency. If you only used that global dependency, there could be a conflict, where only one of the projects works. 
@@ -37,6 +53,8 @@ dict["apples"]Then I could have an instance method like this:
         print("This car is a " + self.year + " " + self.make + " " + self.model)
 ```
 
+[Classes and Objects Python 3.11 Docs](https://docs.python.org/3/tutorial/classes.html)
+
 ### Dictionaries
 
 A dictionary in python is like a key -> value map. It's interesting, because the values of the entries don't have to be of all the same type. You can create a dictionary like this:  
@@ -69,10 +87,74 @@ len(dict)
 
 Dictionaries are a very useful way of storing data in python.
 
-
+[W3Schools Python Dictionaries Docs](https://www.w3schools.com/python/python_dictionaries.asp)
 
 ### Regular Expressions
 
-In Python regular expressions (regex, or regexp) 
+In Python regular expressions (regex, or regexp) are a useful tool for pattern matching. Using regex, you can search, match, and manipulate strings based on specific patterns. You need to import the **re** library to use them:
 
+```python
+import re
+```
 
+Here are some of the most common methods that are provided by the **re** library:
+
+| Function | Description                                                      |
+| -------- | ---------------------------------------------------------------- |
+| findall  | Returns a list containing all matches of pattern                 |
+| search   | Returns a "match" object if there is a match                     |
+| split    | Returns a list, where each element is where the string was split |
+| sub      | Replaces matches with a string                                   |
+
+In the parameters of these functions, you can define patterns. You can do this with **metacharacters**. Metacharacters are characters that have a specific meaning.
+
+Here are some useful metacharacters:
+
+| Character | Description                                          | Example   |
+| --------- | ---------------------------------------------------- | --------- |
+| []        | A set of characters                                  | `[a-e]`   |
+| \         | A special sequence (for example, sequence of digits) | `\d`      |
+| .         | Any character (except newline)                       | `he..o`   |
+| ^         | Starts with                                          | `^hello`  |
+| \$        | Ends with                                            | `planet$` |
+| \*        | Zero or more occurances                              | `he.*o`   |
+| +         | One or more occurances                               | `he.+o`   |
+| ?         | Zero or one occurances                               | `he.?o`   |
+
+There are also **special sequences** which can be used with a `\` and then a specific character. Here are some of the characters that are useful
+
+| Character | Description                                                                                                                                         | Example                   |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| \A        | Finds characters at the beginning of the string                                                                                                     | `"\AWord"`                |
+| \b        | Finds characters at the beginning or end of a word. (`r` is at the beginning to tell the regular expression that it’s searching for a “raw” string) | `r“\bing”` or `r”find\b”` |
+| \d        | Finds digits 0-9                                                                                                                                    | `\d`                      |
+| \s        | Finds whitespace characters                                                                                                                         | `\s`                      |
+| \w        | finds "words" (characters a-Z, 0-9, underscore)                                                                                                     | `\w`                      |
+
+There are many more examples, but these are some of the most used.  
+
+Here is an example of using the `search` function to find a pattern in a string:
+
+```python
+import re
+
+txt = "The mouse lives in Italy"
+x = re.search(r"\bI\w+", txt)
+print(x.group()) # prints: Italy
+```
+
+Let's break down `r"\bI\w+"`
+
+- `r` specifies a "raw" string
+
+- `\b` search the following characters in a string
+
+- `I` is the literal character to search for
+
+- `\w` means to find a word matching the pattern
+
+- `+` means match the pattern with one or more occurances
+
+Regular expressions are useful for searching/manipulating data based on patterns.
+
+[W3Schools Python RegEx Docs](https://www.w3schools.com/python/python_regex.asp)
