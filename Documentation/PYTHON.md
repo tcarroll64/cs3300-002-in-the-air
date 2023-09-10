@@ -4,13 +4,13 @@
 
 [Introduction](#Introduction)
 
-[Virtual Environment](#Virtual Environment)
+[Virtual Environment](#VirtualEnvironment)
 
-[Classes and Objects](#Classes and Objects)
+[Classes and Objects](#ClassesandObjects)
 
 [Dictionaries](#Dictionaries)
 
-[Regular Expressions](#Regular Expressions)
+[Regular Expressions](#RegularExpressions)
 
 ### Introduction
 
