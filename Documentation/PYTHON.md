@@ -2,15 +2,15 @@
 
 ### Table of Contents
 
-[Introduction](#Introduction)
+[Introduction](#introduction)
 
-[Virtual Environment](#VirtualEnvironment)
+[Virtual Environment](#virtual-environment)
 
-[Classes and Objects](#ClassesandObjects)
+[Classes and Objects](#classes-and-objects)
 
-[Dictionaries](#Dictionaries)
+[Dictionaries](#dictionaries)
 
-[Regular Expressions](#RegularExpressions)
+[Regular Expressions](#regular-expressions)
 
 ### Introduction
 
