@@ -34,7 +34,11 @@ This document serves as a one stop shop for the Git commands we will be using th
 
 ### Interacting with the Repository
 
-This section will describe how to interact with the repository and actions you should take when you want to make changes.
+This section will describe how to interact with the repository and actions you should take when you want to make changes. As a note, to be sure you are always working with the updated version of your repository you can check by using the `git status` command. If your session is out of date, to get the current version us the command below.
+
+```bash
+git pull
+```
 
 #### Getting the Repository onto Your Local Machine
 
@@ -315,3 +319,5 @@ This section will present some git commands that will be used and useful options
   - Instead of 'Head^' can use the commit hash to select a specific staged commit to remove. See [Viewing Previous Commits](#viewing-previous-commits) for more information on commit hashes.
 
 ### Additional Resources
+
+- [Git - Reference](https://git-scm.com/docs)
