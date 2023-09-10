@@ -2,31 +2,31 @@
 
 ### Table of Contents
 
-1. [Introduction](#introduction)
+[Introduction](#introduction)
 
-2. [Interacting with the Repository](#interacting-with-the-repository)
-   
-   1. [Getting the Repository onto Your Local Machine](#getting-the-repository-onto-your-local-machine)
-   
-   2. [Updating the Repository](#updating-the-repository)
-   
-   3. [Branches](#branches)
+[Interacting with the Repository](#interacting-with-the-repository)
 
-3. [Commits](#commits)
-   
-   1. [Commit Messages](#commit-messages)
-   
-   2. [Viewing Previous Commits](#viewing-previous-commits)
+   [Getting the Repository onto Your Local Machine](#getting-the-repository-onto-your-local-machine)
 
-4. [Tags](#tags)
-   
-   1. [Viewing Previous Tags](#viewing-previous-tags)
+   [Updating the Repository](#updating-the-repository)
 
-5. [Merging](#merging)
+   [Branches](#branches)
 
-6. [Extra Git Commands](#extra-git-commands)
+[Commits](#commits)
 
-7. [Additional Resources](#additional-resources)
+   [Commit Messages](#commit-messages)
+
+   [Viewing Previous Commits](#viewing-previous-commits)
+
+[Tags](#tags)
+
+   [Viewing Previous Tags](#viewing-previous-tags)
+
+[Merging](#merging)
+
+[Extra Git Commands](#extra-git-commands)
+
+[Additional Resources](#additional-resources)
 
 ### Introduction
 
