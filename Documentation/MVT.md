@@ -26,6 +26,8 @@ The Model-View-Template (MVT) architecture is commonly used in web development f
      - Combine templates with data from the Model to produce the final HTML.
      - Handle presentation and layout of the user interface.
 
+![alt text](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Home_page/basic-django.png)
+
 ## Workflow
 
 MVT follows a specific workflow that allows for it to handle a Client-Server communication.
