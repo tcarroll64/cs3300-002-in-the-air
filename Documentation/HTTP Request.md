@@ -33,3 +33,6 @@ An HTTP request consists of several key components:
 5. The response is sent back to the client.
 
 6. The client processes the response and renders it for the user to view or interact with.
+
+![image](https://github.com/tcarroll64/cs3300-002-in-the-air/assets/103159711/e8add906-84cf-49d1-8431-1a1893d3373d)
+
