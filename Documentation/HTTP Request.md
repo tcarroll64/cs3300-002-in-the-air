@@ -11,9 +11,8 @@ An HTTP request consists of several key components:
    - **POST:** Send data to the server for processing.
    - **PUT:** Update an existing resource on the server.
    - **DELETE:** Remove a resource from the server.
-   - and more.
 
-2. **Uniform Resource Identifier (URI):** The URI identifies the specific resource being requested. It could be a URL pointing to a web page or an API endpoint, for example.
+2. **Uniform Resource Identifier (URI):** The URI identifies the specific resource being requested. It could be a URL pointing to something like a webpage.
 
 3. **HTTP Version:** Indicates the version of the HTTP protocol being used
     - HTTP/1.1 or HTTP/2.
@@ -29,7 +28,7 @@ An HTTP request consists of several key components:
 
 3. The web server receives the request and processes it based on the provided information.
 
-4. The server generates an HTTP response, inclduing headers and a response body (containing the requested data).
+4. The server generates an HTTP response, including headers and a response body (containing the requested data).
 
 5. The response is sent back to the client.
 
