@@ -6,9 +6,9 @@
 
 [Part 1: Implementing Generic List and Detail Views in Django](#implementing-generic-list-and-detail-views-in-django)
 
-&nbsp;&nbsp; [Implementing a `ListView`](#implementing-a-`ListView`)
+&nbsp;&nbsp; [Implementing a ListView](#implementing-a-ListView)
 
-&nbsp;&nbsp; [Implementing a `DetailView`](#implementing-a-`DetailView`)
+&nbsp;&nbsp; [Implementing a DetailView](#implementing-a-DetailView)
 
 &nbsp;&nbsp; [More Explanations](#more-explanations)
 
