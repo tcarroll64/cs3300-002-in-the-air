@@ -536,7 +536,7 @@ The code:
 
 What it looks like:
 
-<img title="" src="file:///C:/Users/ty_ta/OneDrive/Desktop/Picture1.png" alt="" width="535" data-align="inline">
+<img width="379" alt="Picture1" src="https://github.com/tcarroll64/cs3300-002-in-the-air/assets/111841339/21be96e6-1a66-45c3-83b9-1ccfe7d1579f">
 
 Clicking the button redirects the user to the portfolio_detail page.
 
@@ -587,7 +587,7 @@ In the code above, I used bootstrap cards to separate the projects and their but
 
 What it looks like:
 
-<img src="file:///C:/Users/ty_ta/OneDrive/Desktop/Picture2.png" title="" alt="" width="556">
+<img width="426" alt="Picture2" src="https://github.com/tcarroll64/cs3300-002-in-the-air/assets/111841339/4e88b074-c129-453c-8881-3ceab76d2d0b">
 
 The "St1 Proj" card is currently being hovered over.
 
