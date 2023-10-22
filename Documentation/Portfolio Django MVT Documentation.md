@@ -34,11 +34,11 @@
 
 ### Introduction
 
-This document is the compilation of the documentation created for GE05 (parts 1-4). In each part I will include who is responsible for the information to give credit where it is due. After reading this documentation you should be able to understand how to implement generic list/detail views and forms in Django, as well as how to deploy the app on Replit and customize the user interface (found in Django templates).
+This document is the compilation of the documentation created for GE05 (parts 1-4). In each part, I will include who is responsible for the information to give credit where it is due. After reading this documentation you should be able to understand how to implement generic list/detail views and forms in Django, as well as how to deploy the app on Replit and customize the user interface (found in Django templates).
 
 ### Implementing Generic List and Detail Views in Django
 
-As a part of the Django framework, there are generic display views called `DetailView` and `ListView` that displays a list of objects and information contained within them based on a database model. In short, when using these provided views Django fetches information from the database, renders it in a template, and displays the objects/details to the user. You would use a `ListView` whenever you want to present a list of objects within a database model; you would use `DetailView` whenever you want to display the object's related members.
+As a part of the Django framework, there are generic display views called `DetailView` and `ListView` that display a list of objects and information contained within them based on a database model. In short, when using these provided views Django fetches information from the database, renders it in a template, and displays the objects/details to the user. You would use a `ListView` whenever you want to present a list of objects within a database model; you would use `DetailView` whenever you want to display the object's related members.
 
 Before you can display database information to the user in a web app, you must have some models defined in `models.py` to store data.  An example of a model in our Portfolio App is shown below.
 
@@ -69,7 +69,7 @@ class PortfolioListView(generic.ListView):
   model = Portfolio
 ```
 
-Then, we add a path variable in `urls.py` to map the view to a url (shown below). This ensures the correct view gets displayed when a user accesses a particular URL or clicks a button that redirects them.
+Then, we add a path variable in `urls.py` to map the view to a URL (shown below). This ensures the correct view gets displayed when a user accesses a particular URL or clicks a button that redirects them.
 
 ```python
 urlpatterns = [
@@ -77,7 +77,7 @@ urlpatterns = [
 ]
 ```
 
-Finally we create a template to render the view (shown below).
+Finally, we create a template to render the view (shown below).
 
 ```html
 <!-- inherit from base.html -->
@@ -101,7 +101,7 @@ Finally we create a template to render the view (shown below).
 
 #### Implementing a `DetailView`
 
-Similar to [Implementing a `ListView`](#implementing-a-`ListView`), to create a `DetailView` we add a view to `views.py`.
+Similar to [Implementing a `ListView`](#implementing-a-ListView), to create a `DetailView` we add a view to `views.py`.
 
 ```python
 class PortfolioDetailView(generic.DetailView):
@@ -113,7 +113,7 @@ class PortfolioDetailView(generic.DetailView):
     return context
 ```
 
-Above, you can see we overided  `get_context_data()` to customize the data that gets passed to the template.
+Above, you can see we overrided  `get_context_data()` to customize the data that gets passed to the template.
 
 Just as before, we add a path to `urls.py`.
 
@@ -164,7 +164,7 @@ Finally, we create a template to render the portfolio details.
 {% endblock %}
 ```
 
-The above html has some other features to make the user experience more robust, what was done here will be discussed more in [Modifying User Interface in a Django Web App](#modifying-user-interface-in-a-django-web-app).
+The above HTML has some other features to make the user experience more robust, what was done here will be discussed more in [Modifying User Interface in a Django Web App](#modifying-user-interface-in-a-django-web-app).
 
 *Accreditation: Tyler Carroll & Matheus Abrantes*
 
@@ -201,7 +201,7 @@ The above html has some other features to make the user experience more robust, 
 
 *In views.py*
 
-- Create Project: In this view we initiate a form for project creation. If the HTTP request method is `POST` and the form is valid, we save the new project and redirect the user to the relevant page.
+- Create Project: In this view, we initiate a form for project creation. If the HTTP request method is `POST` and the form is valid, we save the new project and redirect the user to the relevant page.
 
 - Delete Project: In the deleteProject view, we first get the project by its primary key. If the HTTP request method is `POST`, we delete the project and redirect the user to the portfolio detail page.
 
@@ -209,14 +209,14 @@ The above html has some other features to make the user experience more robust, 
 
 - Update Portfolio: Similar to updating a project, we first fetch the portfolio. After validating the form, the portfolio is updated.
 
-**How do you pass information from the database to display the active portfolios on the home page? Explore the python shell command line to see what is returned for:**
+**How do you pass information from the database to display the active portfolios on the home page? Explore the Python shell command line to see what is returned for:**
 
 ```python
 student_active_portfolios =
 Student.objects.select_related('portfolio').all().filter(portfolio__is_active=True)
 ```
 
-To ensure only active portfolios are displayed on the home page, we can utilize Django's ORM capabilities to filter them out. This line of code fetches all student objects that have an associated active portfolio. The `select_related` method optimizes our query, reducing database hits when accessing related objects.
+To ensure that only active portfolios are displayed on the home page, we can utilize Django's ORM capabilities to filter them out. This line of code fetches all student objects that have an associated active portfolio. The `select_related` method optimizes our query, reducing database hits when accessing related objects.
 
 **Explore the code in index.html**
 
@@ -226,21 +226,21 @@ Django’s template system offers a way to define how to display data. Template 
 <a class="btn btn-danger" href="{% url 'project-delete' pk=project.id %}" role="button">Delete</a>
 ```
 
-This piece of code uses the url template tag to generate the URL for the delete view dynamically. This is a powerful feature because it ensures that even if the URL patterns change, the links in templates will always remain correct.
+This piece of code uses the URL template tag to generate the URL for the delete view dynamically. This is a powerful feature because it ensures that even if the URL patterns change, the links in templates will always remain correct.
 
 *Accreditation: Matheus Abrantes*
 
 ### Implementing Forms in Django
 
-In a web app there are multiple scenarios where you would want to provide a user a form to fill out so you can store their data in the database. Django has a `forms` class to make this proccess easier to implement.
+In a web app, there are multiple scenarios where you would want to provide a user a form to fill out so you can store their data in the database. Django has a `forms` class to make this process easier to implement.
 
 #### General Setup for Django Forms
 
-When you want to have a user enter data in a form you have to create the form class, create the form in a template to be rendered, create a view to handle the HTTP requests (like POST), and add the view path to urls.py.
+When you want to have a user enter data in a form you have to create the form class, create the form in a template to be rendered, create a view to handle the HTTP requests (like POST) and add the view path to urls.py.
 
 **Creating the form class:**
 
-In Django, a model defines a table in the database and its members specify the columns of the table (like object title, object description, etc.). To allow the user to modify the database table via a form you must create a form that has the corresponding model’s members. In our project we used Django’s ModelForm which can automatically generate certain fields based on what is defined in the `Meta` class.
+In Django, a model defines a table in the database and its members specify the columns of the table (like object title, object description, etc.). To allow the user to modify the database table via a form you must create a form that has the corresponding model’s members. In our project, we used Django’s ModelForm which can automatically generate certain fields based on what is defined in the `Meta` class.
 
 The example below is placed in `forms.py`:
 
@@ -280,7 +280,7 @@ Here we use the HTML element `form` with the `POST` HTTP method since we want to
 
 **Creating a view to handle the request:**
 
-The view is called when the url path is referenced in the template via the url name. The view itself should specify the HTTP request method and perform operations to do work on the database. The view also should have render and redirect returns to handle what template is shown to the user and what shows up for the user after the request is processed.
+The view is called when the URL path is referenced in the template via the URL name. The view itself should specify the HTTP request method and perform operations to do work on the database. The view also should have render and redirect returns to handle what template is shown to the user and what shows up for the user after the request is processed.
 
 Here is an example of the `updateProject` view:
 
@@ -301,7 +301,7 @@ def updateProject(request, portfolio_id, project_id):
 
 **Adding the path to `urls.py` to access the created view:**
 
-To pull up the specific view when the user paths to the database operation, we specify the view in the url path.
+To pull up the specific view when the user paths to the database operation, we specify the view in the URL path.
 
 ```python
 path('portfolio/<int:portfolio_id>/update_project/<int:project_id>', views.updateProject, name='update-project'),
@@ -313,7 +313,7 @@ Note that the url path only mentions the view while a template references the pa
 <a href="{% url 'update-project' portfolio_id=portfolio.id project_id=project.id %}" class="btn btn-primary">Update</a>
 ```
 
-The above snip is found in `portfolio_detail.html` template and the url name is referenced in the `href` attribute. When the button is clicked it references the url path to pull up the view which displays the `project_update.html` template.
+The above snip is found in `portfolio_detail.html` template and the URL name is referenced in the `href` attribute. When the button is clicked it references the url path to pull up the view which displays the `project_update.html` template.
 
 *Accreditation: Tyler Carroll & Hasdi Ryan*
 
@@ -325,7 +325,7 @@ The above snip is found in `portfolio_detail.html` template and the url name is 
    form = ProjectForm()
    ```
 
-2. Grab any relevant ID’s so you can assign/relate it to a row (object) in the database.
+2. Grab any relevant IDs so you can assign/relate them to a row (object) in the database.
    
    ```python
    portfolio = Portfolio.objects.get(pk=portfolio_id)
@@ -367,13 +367,13 @@ The above snip is found in `portfolio_detail.html` template and the url name is 
    return render(request, 'portfolio_app/project_form.html', context)
    ```
 
-7. Create template as seen in [General Setup for Django Forms](#general-setup-for-django-forms)
+7. Create a template as seen in [General Setup for Django Forms](#general-setup-for-django-forms)
 
 *Accreditation: Tyler Carroll & Hasdi Ryan*
 
 #### Updating Items via Forms
 
-1. Grab relevant private key IDs passed from the url path. The get_object_or_404() method was used here so that it auto handles the `DoesNotExist` error if an object does not exist in the database.
+1. Grab relevant private key IDs passed from the URL path. The get_object_or_404() method was used here so that it auto-handles the `DoesNotExist` error if an object does not exist in the database.
    
    ```python
    project = get_object_or_404(Project, pk=project_id)
@@ -386,7 +386,7 @@ The above snip is found in `portfolio_detail.html` template and the url name is 
    form = ProjectForm(instance=project)
    ```
 
-3. Handle the HTTP request while ensuring the form is valid. Specify that the request is associated with the items instance specified via the private key ID. 
+3. Handle the HTTP request while ensuring the form is valid. Specify that the request is associated with the instance of the item specified via the private key ID. 
    
    ```python
    form = ProjectForm(request.POST, instance = project)
@@ -410,20 +410,20 @@ The above snip is found in `portfolio_detail.html` template and the url name is 
    return render(request, 'portfolio_app/project_update.html', context)
    ```
 
-6. Create template as seen in [General Setup for Django Forms](#general-setup-for-django-forms)
+6. Create a template as seen in [General Setup for Django Forms](#general-setup-for-django-forms)
 
 *Accreditation: Tyler Carroll & Hasdi Ryan*
 
 #### Deleting Items via Forms
 
-1. Grab relevant private key IDs passed from the url path.
+1. Grab relevant private key IDs passed from the URL path.
    
    ```python
    project = get_object_or_404(Project, pk=project_id)
    portfolio = get_object_or_404(Project, pk=portfolio_id)
    ```
 
-2. Handle the HTTP request. Seen below, the `POST` method was used instead of `DELETE` since we could not get it working. However, using `POST` still works because we are processing the request in the database using `project.delete()`
+2. Handle the HTTP request. As seen below, the `POST` method was used instead of `DELETE` since we could not get it working. However, using `POST` still works because we are processing the request in the database using `project.delete()`
    
    ```python
    if request.method == 'POST':
@@ -441,7 +441,7 @@ The above snip is found in `portfolio_detail.html` template and the url name is 
    return render(request, 'portfolio_app/project_delete.html', context)
    ```
 
-4. The template for delete is different since it’s not a `ModelForm` like the create and update forms.
+4. The template for object deletion is different since it’s not a `ModelForm` like the create and update forms.
    
    ```python
    <!-- inherit from base.html -->
@@ -464,7 +464,7 @@ The above snip is found in `portfolio_detail.html` template and the url name is 
 
 ### Deploying a Django Web App On Replit
 
-***As a note:*** So this part of the assignment had us working with Replit for about an hour. I had some issues with it and was not able to do it in that period of time, so I am going to provide the “step by step” process on how to do that and more information that I found on Replit as well. 
+***As a note:*** This part of the assignment had us working with Replit for about an hour. I had some issues with it and was not able to do it in that period of time, so I am going to provide the “step by step” process on how to do that and more information that I found on Replit as well. 
 
 **Pre-Deployment Steps:**
 
@@ -478,7 +478,7 @@ The above snip is found in `portfolio_detail.html` template and the url name is 
   
   - I linked my GitHub
   
-  - Once registered, I verify my email and logged into the account.
+  - Once registered, I verified my email and logged into the account.
 
 - Create a New Replit:
   
@@ -538,11 +538,11 @@ What it looks like:
 
 <img title="" src="file:///C:/Users/ty_ta/OneDrive/Desktop/Picture1.png" alt="" width="535" data-align="inline">
 
-Clicking the button redirects user to the portfolio_detail page.
+Clicking the button redirects the user to the portfolio_detail page.
 
 
 
-**Update the Portfolio Projects to not use a list and use some grid, table or card view.**
+**Update the Portfolio Projects to not use a list and use some grid, table, or card view.**
 
 The code:
 
@@ -595,7 +595,7 @@ The "St1 Proj" card is currently being hovered over.
 
 #### Adding Dark Mode Functionality
 
-I added a slider button to replace the normal button in the darkmode example. Then I changed some of the paragraphs and naming. I tried adding a light mode title on the left of the slider and a dark mode title on the right. In short, you make the body class default black on white, then make a dark mode class reverse white on black. You then toggle the dark mode class with a slider button.
+I added a slider button to replace the normal button in the dark mode example. Then I changed some of the paragraphs and names. I tried adding a light mode title on the left of the slider and a dark mode title on the right. In short, you make the body class default black on white, then make a dark mode class reverse white on black. You then toggle the dark mode class with a slider button.
 
 Code to enable dark mode:
 
@@ -616,10 +616,6 @@ Code to enable dark mode:
 ```
 
 To see how the slider button was made click [here]([How To Create a Toggle Switch](https://www.w3schools.com/howto/howto_css_switch.asp)).
-
-
-
-
 
 *Accreditation: Hasdi Ryan*
 
